@@ -1,1 +1,18 @@
 <h2> You are on the homepage</h2>
+
+<ol>
+    {{#each posts}}
+    <li>
+        <article>
+            <div>
+                <span>
+                    {{ title }}
+                </span>
+            </div>
+            <div>
+                {{ content }}
+            </div>
+        </article>
+    </li>
+    {{/each}}
+</ol>
