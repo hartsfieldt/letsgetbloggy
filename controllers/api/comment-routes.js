@@ -10,7 +10,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/:id", (req, res) => {
+router.post("/", (req, res) => {
   Comment.create({
     comment_body: req.body.comment_body,
     post_id: req.body.post_id,
@@ -41,3 +41,5 @@ router.delete("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+module.exports = router;

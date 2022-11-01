@@ -1,0 +1,24 @@
+<div class="row">
+  <h2>{{post.title}}</h2>
+</div>
+
+<div class="row">
+  <p>Posted by: {{post.user.username}}</p>
+</div>
+
+<div class="row">
+  <h2>{{post.content}}</h2>
+</div>
+
+<div class="row">
+  <div class="list-group mb-3">
+    {{#each post.comments}}
+      <div class="list-group-item flex-column align-items-start">
+        <div class="d-flex w-100 justify-content-between">
+          <small class="test-muted"><strong>{{user.username}}</strong></small>
+        </div>
+        <p class="mb-1">{{comment_body}}</p>
+      </div>
+    {{/each}}
+  </div>
+</div>
