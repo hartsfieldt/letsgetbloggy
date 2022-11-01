@@ -1,18 +1,22 @@
 <h2> You are on the homepage</h2>
+{{#if posts.length}}
 
-<ol>
-    {{#each posts}}
-    <li>
-        <article>
-            <div>
-                <span>
-                    {{ title }}
-                </span>
-            </div>
-            <div>
-                {{ content }}
-            </div>
-        </article>
-    </li>
+  <div class="list-group">
+    {{#each posts as |post|}}
+      <a
+        href="/post/{{post.id}}"
+        class="list-group-item list-group-item-action"
+      >
+        <small>By: {{post.user.username}} on {{post.created_at}}</small>
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{post.title}}</h5>
+        </div>
+        {{#if post.comments.length}}
+          <small>{{post.comments.length}} Comment(s)</small>
+        {{/if}}
+      </a>
     {{/each}}
-</ol>
+  </div>
+{{else}}
+  <h2>There are no posts to view</h2>
+{{/if}}
