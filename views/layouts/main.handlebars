@@ -19,9 +19,12 @@
             <a class="navbar-brand" href="#">Let's Get Bloggy!</a>
             <div>
               <div class="d-flex">
-                <a href="/dashboard" class="nav-link">Dashboard</a>
-                <a href="/login" class="nav-link">Log-in</a>
-                <a class="nav-link" id="logoutbtn">Log-out</a>
+                {{#if loggedIn}}
+                  <a href="/dashboard" class="nav-link">Dashboard</a>
+                  <a class="nav-link" id="logoutbtn">Log-out</a>
+                {{else}}
+                  <a href="/login" class="nav-link">Log-in</a>
+                {{/if}}
               </div>
             </div>
           </div>
